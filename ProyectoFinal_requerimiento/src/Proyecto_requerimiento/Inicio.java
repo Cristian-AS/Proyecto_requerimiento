@@ -16,6 +16,9 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Cajero Automatico");
+        this.setResizable(false);
     }
 
     /**
@@ -73,6 +76,11 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         jButton_Salir.setText("SALIR");
+        jButton_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_SalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,7 +89,7 @@ public class Inicio extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(jButton_consulta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(jButton_retiro)
                 .addGap(60, 60, 60)
                 .addComponent(jButton_transferencia)
@@ -130,7 +138,7 @@ public class Inicio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(29, 29, 29))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,22 +151,30 @@ public class Inicio extends javax.swing.JFrame {
     private void jButton_consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_consultaActionPerformed
         ConsultaSaldo c = new ConsultaSaldo();
         c.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton_consultaActionPerformed
 
     private void jButton_retiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_retiroActionPerformed
         RetiroDinero r = new RetiroDinero();
         r.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton_retiroActionPerformed
 
     private void jButton_transferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_transferenciaActionPerformed
         Transferencia t = new Transferencia();
         t.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton_transferenciaActionPerformed
 
     private void jButton_consignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_consignacionActionPerformed
         Consignacion g = new Consignacion();
         g.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton_consignacionActionPerformed
+
+    private void jButton_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton_SalirActionPerformed
 
     /**
      * @param args the command line arguments
