@@ -5,6 +5,8 @@
  */
 package Proyecto_requerimiento;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Cristian
@@ -30,6 +32,7 @@ public class Transferencia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         jButton_volver3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -42,6 +45,8 @@ public class Transferencia extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
 
         jButton_volver3.setText("Volver");
         jButton_volver3.addActionListener(new java.awt.event.ActionListener() {
@@ -152,22 +157,26 @@ public class Transferencia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_volver3ActionPerformed
 
     private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
-        
+
     }//GEN-LAST:event_txtNumeroActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        
+
         final int saldo_inicial = 5000;
         int transferencia = Integer.parseInt(txtNumero.getText());
         int dinero = Integer.parseInt(txtTransferencia.getText());
-        int total = saldo_inicial - dinero;
-        
-        
-        txtResultado.setText("**Resumen de Transferencia**"+"\n\n");
-        txtResultado.append("Numero de cuenta de la persona: "+transferencia+"\n\n");
-        txtResultado.append("Transferencia exitosa "+"\n\n");
-        txtResultado.append("Su Saldo quedo en: "+total+"\n\n");
-        
+
+        if (dinero > saldo_inicial) {
+            JOptionPane.showMessageDialog(null, "Saldo insuficiente para Transferir ");
+        } else {
+            int total = saldo_inicial - dinero;
+            txtResultado.setText("**Resumen de Transferencia**" + "\n\n");
+            txtResultado.append("Numero de cuenta de la persona: " + transferencia + "\n\n");
+            txtResultado.append("Transferencia exitosa " + "\n\n");
+            txtResultado.append("Su Saldo quedo en: " + total + "\n\n");
+        }
+
+
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
@@ -213,6 +222,7 @@ public class Transferencia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextArea txtResultado;
     private javax.swing.JTextField txtTransferencia;
